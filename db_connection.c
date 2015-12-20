@@ -26,7 +26,7 @@ struct Database{
 struct Connection{
     FILE *file;
     struct Database *db;
-}
+};
 
 /* if there exist some error (errno means the int of the error) we print the message if there is not a recognized
  * error then print the passed message and we exit the program with a bad return int*/
@@ -63,7 +63,7 @@ void Database_load(struct Connection *conn)
 struct Connection *Database_open(const char *filename, char mode)
 {
     // we create a connection and give some space in memory with the size of a struct connection
-    struct Connection *con = malloc(sizeof(struct Connection));
+    struct Connection *conn = malloc(sizeof(struct Connection));
     // if there was an error making the connection print the message
     if(!conn) die("Memory error");
 
